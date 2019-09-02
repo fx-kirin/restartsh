@@ -1,10 +1,11 @@
+
 restartsh
 =========
 
-.. image:: https://img.shields.io/pypi/v/restartsh.svg
-    :target: https://pypi.python.org/pypi/restartsh
-    :alt: Latest PyPI version
 
+.. image:: https://img.shields.io/pypi/v/package_name.svg
+   :target: https://pypi.python.org/pypi/restartsh
+   :alt: Latest PyPI version
 
 
 Usage
@@ -25,4 +26,4 @@ Licence
 Authors
 -------
 
-`restartsh` was written by `fx-kirin <fx.kirin@gmail.com>`_.
+package_name was written by `fx-kirin <fx.kirin@gmail.com>`_.
