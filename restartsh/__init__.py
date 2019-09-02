@@ -14,21 +14,21 @@ logger = logging.getLogger('restartsh')
 
 
 def restart_thread(cmd, flag, interval=0):
-    while flag.is_set():
+    while not flag.is_set():
         logger.info('Start [CMD]:%s', cmd)
         result = delegator.run(cmd)
         logger.info('Finished [CMD]:%s', cmd)
-        if result.ok():
-            result.stdout
+        if result.ok:
+            logger.info('[OUT]%s', result.out)
         else:
-            result.stderro
+            logger.error('[ERR]%s', result.err)
         if (interval > 0):
             logger.info('Sleep %d sec [CMD]', interval)
             time.sleep(interval)
     logger.info("Close by exit_flag")
 
 
-def resterter(cmd, interval=0):
+def restarter(cmd, interval=0):
     flag = threading.Event()
     thread = threading.Thread(target=restart_thread, args=(cmd, flag, interval))
     thread.daemon = True
